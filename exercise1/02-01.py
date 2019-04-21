@@ -2,6 +2,7 @@ import argparse
 import json
 
 
+# Arithmetic encoding of the given argument string
 def main():
     # Read arguments
     input_string = read_input()
