@@ -59,9 +59,9 @@ def compress(raw, dictionary):
 
             # Convert it back to binary and use it as the next dictionary entry
             last_entry_key = format(last_entry_key, 'b')
+
             # We want to have 4 bit, otherwise codes start with other code words
-            if len(last_entry_key) <= 3:
-                last_entry_key = last_entry_key.zfill(4)
+            last_entry_key = last_entry_key.zfill(4)
 
             # Insert into dictionary
             dictionary[last_entry_key] = combined_word
