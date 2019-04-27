@@ -3,7 +3,7 @@ from collections import OrderedDict
 import json
 
 
-# Arithmetic encoding of the given argument string
+# LZW encoding of the given argument string
 def main():
     # DEBUG
     # input_json = json.loads(
