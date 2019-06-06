@@ -1,16 +1,17 @@
+import sys
 from collections import OrderedDict
 import json
 
 
-# Arithmetic encoding of the given argument string
+# LZW encoding of the given argument string
 def main():
     # DEBUG
-    input_json = json.loads(
-        "{ \"dictionary\": { \"0000\": \"A\", \"0001\": \"B\", \"0010\": \"C\", \"0011\": \"D\" }, \"raw\": "
-        "\"acdacdacbacbbacdd\"}")
+    # input_json = json.loads(
+    #     "{ \"dictionary\": { \"0000\": \"a\", \"0001\": \"b\", \"0010\": \"c\", \"0011\": \"d\" }, \"raw\": "
+    #     "\"acdacdacbacbbacdd\"}")
 
     # In case of needed stdin reading
-    # input_json = json.load(sys.stdin)
+    input_json = json.load(sys.stdin)
 
     # Extract data from given json
     # I use ordered dicts, because I'm lazy :)
@@ -42,8 +43,8 @@ def compress(raw, dictionary):
 
     # Do it until we have used all characters
     while True:
-        # Get current character as upper case letter
-        current_char = raw[iteration].upper()
+        # Get current character
+        current_char = raw[iteration]
         combined_word = latest_char + current_char
 
         # If char is not in dict, append it to our dictionary, but do care about counting correctly!
