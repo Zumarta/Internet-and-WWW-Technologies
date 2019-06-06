@@ -6,12 +6,12 @@ import json
 # LZW encoding of the given argument string
 def main():
     # DEBUG
-    # input_json = json.loads(
-    #     "{ \"dictionary\": { \"0000\": \"a\", \"0001\": \"b\", \"0010\": \"c\", \"0011\": \"d\" }, \"raw\": "
-    #     "\"acdacdacbacbbacdd\"}")
+    input_json = json.loads(
+         "{ \"dictionary\": { \"0000\": \"a\", \"0001\": \"b\", \"0010\": \"c\", \"0011\": \"d\" }, \"raw\": "
+         "\"acdacdacbacbbacdd\"}")
 
     # In case of needed stdin reading
-    input_json = json.load(sys.stdin)
+    # input_json = json.load(sys.stdin)
 
     # Extract data from given json
     # I use ordered dicts, because I'm lazy :)
