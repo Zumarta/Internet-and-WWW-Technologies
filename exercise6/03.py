@@ -5,8 +5,8 @@ import socket
 def read_argument():
     """ Return port """
     parser = argparse.ArgumentParser(description='Sum or multiply integers.')
-    parser.add_argument('port', metavar='N', nargs='+', type=int, help='TCP-Port')
-    return parser.parse_args().port[0]
+    parser.add_argument('port', type=int, help='TCP-Port')
+    return parser.parse_args().port
 
 
 def open_tcp_connection(tcp_port):
