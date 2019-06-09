@@ -5,9 +5,7 @@ import socket
 def read_argument():
     """ Return port """
     parser = argparse.ArgumentParser(description='Sum or multiply integers.')
-
     parser.add_argument('port', metavar='N', nargs='+', type=int, help='TCP-Port')
-
     return parser.parse_args().port[0]
 
 
@@ -20,10 +18,7 @@ def open_tcp_connection(tcp_port):
 
     # Build up connection
     sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    # Task says, port shall be bound to all interfaces on the machine
-    # StackOverflow said, binding on interfaces on Windows works via using the specific IP address of the interface
-    # I changed that IP back to localhost, because otherwise test's might not work for another users and networks.
-    sock.bind(('127.0.0.1', tcp_port))
+    sock.bind(('', tcp_port))
 
     sock.listen(1)
     conn, addr = sock.accept()
