@@ -3,8 +3,8 @@ import math
 
 def calc_sum(relative_frequencies):
     sum_of_frequencies = 0
-    for i in relative_frequencies:
-        sum_of_frequencies += i
+    for n in relative_frequencies:
+        sum_of_frequencies += n
 
     return sum_of_frequencies
 
